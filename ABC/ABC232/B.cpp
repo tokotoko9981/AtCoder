@@ -19,22 +19,28 @@ using ll = long long;
 
 int main(void){
 
-    int L, R;
-    cin >> L >> R;
+    string S, T;
+    cin >> S >> T;
 
-    string S;
-    cin >> S;
-
-    string tmp = S.substr(L - 1, R - L + 1);
-
-
-    reverse(all(tmp));
-
-    rep(i, R - L + 1) {
-        S.at(i + L - 1) = tmp.at(i);
+    vi A(S.size()), B(T.size());
+    rep(i, S.size()) {
+        A.at(i) = S.at(i) - 'a';
+        B.at(i) = T.at(i) - 'a';
     }
 
-    cout << S << endl;
+    rep(i, 26) {
+        rep(j, S.size()) {
+            A.at(j)++;
+            A.at(j) %= 26;
+        }
+        if(A == B) {
+            pyes;
+            exit(0);
+        }
+    }
+
+    pno;
+
 
     return 0;
 }

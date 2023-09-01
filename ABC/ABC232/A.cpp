@@ -19,22 +19,10 @@ using ll = long long;
 
 int main(void){
 
-    int L, R;
-    cin >> L >> R;
-
     string S;
     cin >> S;
 
-    string tmp = S.substr(L - 1, R - L + 1);
-
-
-    reverse(all(tmp));
-
-    rep(i, R - L + 1) {
-        S.at(i + L - 1) = tmp.at(i);
-    }
-
-    cout << S << endl;
+    cout << (S.at(0) - '0') * (S.at(2) - '0') << endl;
 
     return 0;
 }
