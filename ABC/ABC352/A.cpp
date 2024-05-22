@@ -9,7 +9,6 @@ using vcc = vector<vector<char>>;
 using vs = vector<string>;
 using vss = vector<vector<string>>;
 using ll = long long;
-const ll INF = (1LL << 60);
 
 #define rep(o, i, n) for (ll i = o; i < (n); i++)
 #define rrep(o, i, n) for (ll i = o; i >= (n); i--)
@@ -39,10 +38,16 @@ void setup(){
 
 
 
+
 int main(void){
     setup();
 
+    ll n, x, y, z;
+    cin >> n >> x >> y >> z;
 
+    if(x > y) swap(x, y);
+    if(x <= z && z <= y) pyes;
+    else pno;
 
     return 0;
 }

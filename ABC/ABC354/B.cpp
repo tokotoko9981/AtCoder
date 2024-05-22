@@ -42,7 +42,22 @@ void setup(){
 int main(void){
     setup();
 
+    ll n;
+    cin >> n;
+    vs s(n);
+    vl c(n);
+    rep(0, i, n) cin >> s[i] >> c[i];
 
+    ll sum = 0;
+    rep(0, i, n) {
+        sum += c[i];
+    }
+
+    sum %= n;
+
+    sort(all(s));
+
+    cout << s[sum] << endl;
 
     return 0;
 }

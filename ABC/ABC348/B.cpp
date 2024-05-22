@@ -9,7 +9,6 @@ using vcc = vector<vector<char>>;
 using vs = vector<string>;
 using vss = vector<vector<string>>;
 using ll = long long;
-const ll INF = (1LL << 60);
 
 #define rep(o, i, n) for (ll i = o; i < (n); i++)
 #define rrep(o, i, n) for (ll i = o; i >= (n); i--)
@@ -42,7 +41,22 @@ void setup(){
 int main(void){
     setup();
 
+    ll n;
+    cin >> n;
+    vl x(n), y(n);
+    rep(0, i, n) cin >> x[i] >> y[i];
 
+    rep(0, i, n) {
+        ll maxP = -1, index;
+        rrep(n - 1, j, 0) {
+            if(maxP <= (x[i] - x[j]) * (x[i] - x[j]) + (y[i] - y[j]) * (y[i] - y[j])) {
+                maxP = (x[i] - x[j]) * (x[i] - x[j]) + (y[i] - y[j]) * (y[i] - y[j]);
+                index = j + 1;
+            }
+
+        }
+        cout << index << endl;
+    }
 
     return 0;
 }

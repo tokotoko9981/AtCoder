@@ -9,7 +9,6 @@ using vcc = vector<vector<char>>;
 using vs = vector<string>;
 using vss = vector<vector<string>>;
 using ll = long long;
-const ll INF = (1LL << 60);
 
 #define rep(o, i, n) for (ll i = o; i < (n); i++)
 #define rrep(o, i, n) for (ll i = o; i >= (n); i--)
@@ -42,7 +41,23 @@ void setup(){
 int main(void){
     setup();
 
+    ll n;
+    cin >> n;
+    vector<pair<ll, ll>> ac(n);
+    rep(0, i, n) cin >> ac[i].FI >> ac[i].SE;
+    sort(all(ac));
 
+    ll ans = ac[0].FI;
+    set<ll> memo;
+    memo.insert(ac[0].SE);
+    rep(1, i, n) {
+        if(!memo.count(ac[i].SE)) {
+            ans = ac[i].FI;
+            memo.insert(ac[i].SE);
+        }
+    }
+
+    cout << ans << endl;
 
     return 0;
 }

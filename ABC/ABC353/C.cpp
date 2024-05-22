@@ -42,7 +42,26 @@ void setup(){
 int main(void){
     setup();
 
+    ll n;
+    cin >> n;
+    vl a(n);
+    rep(0, i, n) {
+        cin >> a[i];
+    }
+    sort(all(a));
 
+    ll ans = 0;
+    rep(0, i, n) {
+        ans += (n - 1) * a[i];
+    }
+
+
+    rep(0, i, n - 1) {
+        ll iter = n - max((ll)((lower_bound(all(a), 100000000 - a[i]) - a.begin())), i + 1);
+        ans -= iter * 100000000;
+    }
+
+    cout << ans << endl;
 
     return 0;
 }

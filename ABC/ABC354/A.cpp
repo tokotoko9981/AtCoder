@@ -42,6 +42,18 @@ void setup(){
 int main(void){
     setup();
 
+    ll h, tall = 0, up = 1;
+    cin >> h;
+
+
+    for(int i = 0;; i++) {
+        tall += up;
+        up *= 2;
+        if(h < tall) {
+            cout << i + 1 << endl;
+            break;
+        }
+    }
 
 
     return 0;

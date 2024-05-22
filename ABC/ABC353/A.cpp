@@ -9,7 +9,6 @@ using vcc = vector<vector<char>>;
 using vs = vector<string>;
 using vss = vector<vector<string>>;
 using ll = long long;
-const ll INF = (1LL << 60);
 
 #define rep(o, i, n) for (ll i = o; i < (n); i++)
 #define rrep(o, i, n) for (ll i = o; i >= (n); i--)
@@ -39,10 +38,22 @@ void setup(){
 
 
 
+
 int main(void){
     setup();
 
+    ll n, h;
+    cin >> n >> h;
+    rep(1, i, n) {
+        ll tmp;
+        cin >> tmp;
+        if(h < tmp) {
+            cout << i + 1 << endl;
+            exit(0);
+        }
+    }
 
+    cout << -1 << endl;
 
     return 0;
 }
