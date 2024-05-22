@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+#include <atcoder/all>
+using namespace atcoder;
 using vi = vector<int>;
 using vii = vector<vector<int>>;
 using vl = vector<long long>;
@@ -26,23 +28,16 @@ bool chmax(T &a,const T& b){if(a<b){a=b;return true;}return false;}
 template <typename T>
 bool chmin(T &a,const T& b){if(a>b){a=b;return true;}return false;}
 
-void setup(){
-#ifdef LOCAL
-    ifstream inputFile("input.txt");
-        cin.rdbuf(inputFile.rdbuf());
-#else
-    cin.tie(0); ios::sync_with_stdio(0);
-#endif
-    cout<<fixed<<setprecision(10);
+__attribute__((constructor)) void constructor() {
+    cin.tie(nullptr);
+    ios_base::sync_with_stdio(false);
+    cout << fixed << setprecision(16);
 }
 
 
 
 
 int main(void){
-    setup();
-
-
 
     return 0;
 }
